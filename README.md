@@ -43,9 +43,9 @@
 
 > Still in development..
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **[MVC structure]**
+- **[Model validation]**
+- **[RSpec testing]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -85,7 +85,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd blog-rails-app
+  cd my-blog
   bundle install
 ```
 
