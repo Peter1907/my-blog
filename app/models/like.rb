@@ -3,11 +3,10 @@ class Like < ApplicationRecord
   belongs_to :post
 
   after_create :update_like_counter
-  after_destroy :update_like_counter
 
   private
 
   def update_like_counter
-    post.likes_counter = post.likes.count
+    post.increment! :likes_counter
   end
 end
