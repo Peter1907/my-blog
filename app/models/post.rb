@@ -3,13 +3,13 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
-  scope :last_3, -> { order(created_at: :desc).limit(3) }
+  scope :last_3_posts, -> { order(created_at: :desc).limit(3) }
 
   after_create :update_post_counter
   after_destroy :update_post_counter
 
   def last_5_comments
-    comments.last_5
+    comments.last_5_comments
   end
 
   private
