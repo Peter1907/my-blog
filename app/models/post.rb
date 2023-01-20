@@ -3,6 +3,9 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
+  validates :title, presence: true, length: { maximum: 250 }
+  validates :comments_counter, :likes_counter, numericality: { greater_than_or_equal_to: 0 }
+
   scope :last_3_posts, -> { order(created_at: :desc).limit(3) }
 
   after_create :update_post_counter
