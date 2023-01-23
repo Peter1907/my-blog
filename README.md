@@ -43,9 +43,15 @@
 
 > Still in development..
 
-- **[MVC structure]**
-- **[Model validation]**
-- **[RSpec testing]**
+- **MVC structure**
+- **Model validation**
+- **RSpec testing**
+
+> Future Features
+
+- **Views**
+- **Forms**
+- **Authentication & Authorization**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
