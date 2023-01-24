@@ -111,7 +111,12 @@ Or for short:
 
 ### Run tests
 
-> Still in development..
+- You would have the necessary gems added to the Gemfile
+- Open the terminal in the repo folder on your machine & run `bundle install` if you haven't already done so by this point
+- In the terminal you have the option to run the tests for:
+  - An entire folder, using the `rspec spec` command.
+  - A sub-folder, using the `rspec spec/models` for example.
+  - A single file, using the `rspec spec/requests/post_spec.rb` for example.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
