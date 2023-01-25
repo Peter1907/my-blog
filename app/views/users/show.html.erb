@@ -15,6 +15,7 @@
       <div class="post">
         <h4><%= link_to "Post #" + (i + 1).to_s, user_post_path(@user, post) %></h4>
         <p><%= post.text %></p>
+        <p>Commets: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
       </div>
     <% end %>
     <%= link_to "See all posts", user_posts_path(@user) %>
