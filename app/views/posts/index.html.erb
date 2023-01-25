@@ -1,1 +1,24 @@
-<h1>Here should be a list of all the posts for a specific user</h1>
+<div class="User">
+  <div class="info">
+    <img src=<%= @user.photo %> alt="user pic" />
+    <div class="title">
+      <h3><%= @user.name %></h3>
+      <p>Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </div>
+  <div class="posts">
+    <% @user.posts.each_with_index do |post, i| %>
+      <div class="post">
+        <h4><%= link_to "Post #" + (i + 1).to_s, user_post_path(@user, post) %></h4>
+        <p><%= post.text %></p>
+        <p>Commets: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+      </div>
+      <div class="comments">
+        <% post.last_5_comments.each do |comment| %>
+          <p><%= comment.author.name %>: <%= comment.text %></p>
+        <% end %>
+      </div>
+    <% end %>
+    <%= link_to "Back", user_posts_path(@user) %>
+  </div>
+</div>
