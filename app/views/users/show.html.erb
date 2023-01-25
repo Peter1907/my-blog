@@ -11,7 +11,6 @@
     <p><%= @user.bio %></p>
   </div>
   <div class="posts">
-    <h4>Last 3 posts</h4>
     <% @user.last_3_posts.each_with_index do |post, i| %>
       <div class="post">
         <h4><%= link_to "Post #" + (i + 1).to_s, user_post_path(@user, post) %></h4>

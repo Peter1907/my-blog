@@ -27,9 +27,5 @@ RSpec.describe User, type: :request do
     it 'renders the correct template' do
       expect(response).to render_template('show')
     end
-
-    it 'renders the view with the correct placeholder text' do
-      expect(response.body).to include('Last 3 posts')
-    end
   end
 end
