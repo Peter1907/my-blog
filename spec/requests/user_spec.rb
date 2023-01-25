@@ -29,7 +29,7 @@ RSpec.describe User, type: :request do
     end
 
     it 'renders the view with the correct placeholder text' do
-      expect(response.body).to include('more details about a specific user')
+      expect(response.body).to include('Last 3 posts')
     end
   end
 end

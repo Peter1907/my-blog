@@ -1,1 +1,24 @@
-<h1>Here should be some more details about a specific user</h1>
+<div class="User">
+  <div class="info">
+    <img src=<%= @user.photo %> alt="user pic" />
+    <div class="title">
+      <h3><%= @user.name %></h3>
+      <p>Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </div>
+  <div class="bio">
+    <h4>Bio:</h4>
+    <p><%= @user.bio %></p>
+  </div>
+  <div class="posts">
+    <h4>Last 3 posts</h4>
+    <% @user.last_3_posts.each_with_index do |post, i| %>
+      <div class="post">
+        <h4><%= link_to "Post #" + (i + 1).to_s, user_post_path(@user, post) %></h4>
+        <p><%= post.text %></p>
+      </div>
+    <% end %>
+    <%= link_to "See all posts", user_posts_path(@user) %>
+    <%= link_to "Back", users_path %>
+  </div>
+</div>
