@@ -13,7 +13,7 @@ RSpec.describe User, type: :request do
     end
 
     it 'renders the view with the correct placeholder text' do
-      expect(response.body).to include('list for all the users')
+      expect(response.body).to include('list of all the users')
     end
   end
 
