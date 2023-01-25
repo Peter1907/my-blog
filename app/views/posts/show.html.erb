@@ -1,1 +1,12 @@
-<h1>Here should be some more details about a specific post of a certain user</h1>
+<div class="post">
+  <div class="post-info">
+    <h3>Post by <%= @post.author.name %></h3>
+    <p>Commets: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
+  </div>
+  <p class="post-body"><%= @post.text %></p>
+  <div class="comments">
+    <% @post.comments.each do |comment| %>
+      <p><%= comment.author.name %>: <%= comment.text %></p>
+    <% end %>
+  </div>
+</div>
