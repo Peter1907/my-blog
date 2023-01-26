@@ -1,24 +1,26 @@
-<div class="User">
-  <div class="info">
-    <img src=<%= @user.photo %> alt="user pic" />
-    <div class="title">
-      <h3><%= @user.name %></h3>
-      <p>Number of posts: <%= @user.posts_counter %></p>
+<section class="flex flex-col mx-auto min-w-[100%] p-5 space-y-10">
+  <div class="info flex space-x-2">
+    <img class="w-28" src=<%= @user.photo %> alt="user pic" />
+    <div class="title border border-black p-5 w-[100%] flex flex-col">
+      <h3 class="text-2xl"><%= @user.name %></h3>
+      <p class="self-end">Number of posts: <%= @user.posts_counter %></p>
     </div>
   </div>
-  <div class="bio">
-    <h4>Bio:</h4>
+  <div class="bio border border-black p-4">
+    <h4 class="font-bold">Bio:</h4>
     <p><%= @user.bio %></p>
   </div>
-  <div class="posts">
+  <div class="posts flex flex-col space-y-4">
     <% @user.last_3_posts.each_with_index do |post, i| %>
-      <div class="post">
-        <h4><%= link_to "Post #" + (i + 1).to_s, user_post_path(@user, post) %></h4>
+      <div class="post border border-black p-4 flex flex-col">
+        <h4 class="font-bold hover:text-orange-800"><%= link_to "Post #" + (i + 1).to_s, user_post_path(@user, post) %></h4>
         <p><%= post.text %></p>
-        <p>Commets: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+        <p class="self-end">Commets: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
       </div>
     <% end %>
-    <%= link_to "See all posts", user_posts_path(@user) %>
-    <%= link_to "Back", users_path %>
+    <div class="links flex flex-col space-y-2 ml-4">
+      <%= link_to "See all posts", user_posts_path(@user), class: "hover:text-orange-800 hover:underline" %>
+      <%= link_to "Back", users_path, class: "hover:text-orange-800 hover:underline" %>
+    </div>
   </div>
-</div>
+</section>
