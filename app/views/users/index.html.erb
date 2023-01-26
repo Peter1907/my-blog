@@ -1,1 +1,12 @@
-<h1>Here should be a list for all the users</h1>
+<section class="flex flex-col mx-auto min-w-[100%] p-5 space-y-10">
+  <h1 class="font-bold text-2xl">List of all users</h1>
+  <% @users.each do |user| %>
+    <div class="user flex space-x-2 items-center">
+      <img class="w-28" src=<%= user.photo %> alt="user pic" />
+      <div class="title border border-black p-5 w-[100%] flex flex-col">
+        <h3 class="text-2xl hover:text-orange-800"><%= link_to user.name, user_path(user) %></h3>
+        <p class="self-end">Number of posts: <%= user.posts_counter %></p>
+      </div>
+    </div>
+  <% end %>
+<section>
