@@ -1,16 +1,19 @@
 <section class="flex flex-col mx-auto min-w-[100%] p-5 space-y-10">
-  <div class="info flex space-x-2">
-    <img class="w-28" src=<%= @user.photo %> alt="user pic" />
+  <div class="info flex space-x-2 items-center">
+    <img class="w-32" src=<%= @user.photo %> alt="user pic" />
     <div class="title border border-black p-5 w-[100%] flex flex-col">
       <h3 class="text-2xl"><%= @user.name %></h3>
       <p class="self-end">Number of posts: <%= @user.posts_counter %></p>
+      <%= link_to "New Post", new_user_post_path, class: "text-right mt-2 mr-6 hover:text-orange-800 hover:underline" %>
     </div>
   </div>
   <div class="posts flex flex-col space-y-4">
-    <% @user.posts.each_with_index do |post, i| %>
+    <% @user.posts.each_with_index do |post| %>
       <div class="post-container flex flex-col space-y-0.5">
         <div class="post border border-black p-4 flex flex-col">
-          <h4 class="font-bold hover:text-orange-800"><%= link_to "Post #" + (i + 1).to_s, user_post_path(@user, post) %></h4>
+          <h4 class="font-semibold hover:text-orange-800">
+            <%= link_to "Title: #{post.title}", user_post_path(@user, post) %>
+          </h4>
           <p><%= post.text %></p>
           <p class="self-end">Commets: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
         </div>
