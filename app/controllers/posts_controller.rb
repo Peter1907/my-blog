@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
+    @posts = Post.all.order(created_at: :asc)
+    @posts = @posts.paginate(page: params[:page], per_page: 3)
   end
 
   def show

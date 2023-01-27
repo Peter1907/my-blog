@@ -11,3 +11,19 @@
 }
 
 */
+
+.pagination {
+  @apply space-x-2 flex flex-row justify-center items-center;
+}
+
+.pagination a {
+  @apply px-2 p-1 bg-gray-200 font-medium hover:bg-orange-800 hover:text-white hover:cursor-pointer active:scale-95 rounded-md;
+}
+
+.disabled {
+  @apply px-2 p-1 bg-gray-200 text-gray-400 hover:bg-gray-200 hover:text-gray-400 hover:cursor-not-allowed rounded-md;
+}
+
+.current {
+  @apply px-2 p-1 bg-orange-800 text-white font-medium rounded-md not-italic;
+}

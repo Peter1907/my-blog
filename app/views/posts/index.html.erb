@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="posts flex flex-col space-y-4">
-    <% @user.posts.each_with_index do |post| %>
+    <% @posts.each do |post| %>
       <div class="post-container flex flex-col space-y-0.5">
         <div class="post border border-black p-4 flex flex-col">
           <h4 class="font-semibold hover:text-orange-800">
@@ -26,6 +26,7 @@
         <% end %>
       </div>
     <% end %>
+    <%= will_paginate @posts %>
     <%= link_to "Back", user_path(@user), class: "ml-4 hover:text-orange-800 hover:underline" %>
   </div>
 </section>
