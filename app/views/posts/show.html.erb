@@ -5,11 +5,15 @@
       <p class="ml-auto">Commets: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
     </div>
     <p class="post-body"><%= @post.text %></p>
+    <%= button_to "♥", user_post_likes_path(user_id: @post.author.id, post_id: @post.id), method: "create", class: "text-xl w-10 float-right hover:text-red-700 hover:scale-125 ease-in-out duration-300" %>
   </div>
-  <div class="comments border border-black p-4">
-    <% @post.comments.each do |comment| %>
-      <p><%= comment.author.name %>: <%= comment.text %></p>
-    <% end %>
-  </div>
+  <% if @post.comments_counter > 0 %>
+    <div class="comments border border-black p-4">
+      <% @post.comments.each do |comment| %>
+        <p><%= comment.author.name %>: <%= comment.text %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <%= link_to "New Comment", new_user_post_comment_path(@post.author, @post), class: "ml-4 hover:text-orange-800 hover:underline" %>
   <%= link_to "Back", user_posts_path(@post.author_id), class: "ml-4 hover:text-orange-800 hover:underline" %>
 </div>
