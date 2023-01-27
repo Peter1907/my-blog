@@ -1,5 +1,5 @@
-<div class="form-container flex flex-col w-[100%] m-x-auto space-y-10 p-4">
-  <h1 class="font-semibold text-3xl">New Comment</h1>
+<div class="form-container flex flex-col items-start w-[100%] m-x-auto space-y-2 p-4">
+  <h1 class="font-semibold text-3xl mb-8">New Comment</h1>
     <%= form_with model: @comment, url: user_post_comments_url, class: "space-y-4" do |form| %>
       <% if @comment.errors.any? %>
         <div class="bg-red-100 px-4 py-4 border-2 border-red-600 rounded-md">
@@ -15,4 +15,5 @@
       </div>
       <%= form.submit "Add Comment", class: "ml-10 px-4 py-2 bg-gray-200 font-medium hover:bg-orange-800 hover:text-white hover:cursor-pointer active:scale-95 rounded-md" %>
     <% end %>
+    <%= link_to "Cancel", user_post_path(@comment.author_id, @comment.post_id), class: "ml-10 px-4 py-2 bg-gray-200 font-medium hover:bg-orange-800 hover:text-white hover:cursor-pointer active:scale-95 rounded-md" %>
 </div>

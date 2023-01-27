@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def new
-    @comment = Comment.new
+    @comment = Comment.new(author_id: params[:user_id], post_id: params[:post_id])
   end
 
   def create
