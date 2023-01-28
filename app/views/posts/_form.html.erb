@@ -1,0 +1,19 @@
+<%= form_with model: post, url: user_posts_url, class: "space-y-4 self-stretch" do |form| %>
+  <% if post.errors.any? %>
+    <div class="bg-red-100 px-4 py-4 border-2 border-red-600 rounded-md">
+      <% post.errors.full_messages.each do |message| %>
+        <p class="text-red-700 font-medium"><%= message %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="title flex space-x-1">
+    <%= form.label :title %>:
+    <%= form.text_field :title, class: "w-60 rounded-md" %>
+  </div>
+  <div class="text flex space-x-1">
+    <%= form.label :text %>:
+    <%= form.text_area :text, class: "w-96 h-36 rounded-md" %>
+  </div>
+  <%= form.submit "Create Post", class: "ml-10 px-4 py-2 bg-gray-200 font-medium hover:bg-orange-800 hover:text-white hover:cursor-pointer active:scale-95 rounded-md" %>
+<% end %>

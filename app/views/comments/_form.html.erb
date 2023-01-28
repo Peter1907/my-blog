@@ -1,0 +1,15 @@
+<%= form_with model: comment, url: user_post_comments_url, class: "space-y-4 self-stretch" do |form| %>
+  <% if comment.errors.any? %>
+    <div class="bg-red-100 px-4 py-4 border-2 border-red-600 rounded-md">
+      <% comment.errors.full_messages.each do |message| %>
+        <p class="text-red-700 font-medium"><%= message %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="text flex space-x-1">
+    <%= form.label :text %>:
+    <%= form.text_area :text, class: "md:w-96 h-36 rounded-md" %>
+  </div>
+  <%= form.submit "Add Comment", class: "ml-10 px-4 py-2 bg-gray-200 font-medium hover:bg-orange-800 hover:text-white hover:cursor-pointer active:scale-95 rounded-md" %>
+<% end %>
