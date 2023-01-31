@@ -47,7 +47,7 @@ RSpec.describe 'Post', type: :feature do
 
   it 'can display the number of comments for the post' do
     visit user_posts_path(@user)
-    expect(page).to have_content('comments: 1')
+    expect(page).to have_content('Comments: 1')
   end
 
   it 'can display pagination links if there are more than 3 posts' do

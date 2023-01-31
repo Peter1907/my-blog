@@ -23,7 +23,7 @@ RSpec.describe 'User', type: :feature do
   end
   it 'can redirected to that users show page' do
     visit '/users'
-    click_link 'user_link'
+    click_link 'Tom'
     expect(page).to have_current_path(user_path(@first_user))
   end
 end

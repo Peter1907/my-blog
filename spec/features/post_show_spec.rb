@@ -8,7 +8,7 @@ RSpec.describe 'Post', type: :feature do
   end
   it 'can display the post title' do
     visit user_post_path(@user, @first_post)
-    expect(page).to have_content('Hello')
+    expect(page).to have_content('Title: Hello')
   end
   it 'can display who wrote the post' do
     visit user_post_path(@user, @first_post)
@@ -16,7 +16,7 @@ RSpec.describe 'Post', type: :feature do
   end
   it 'can display the number of comments' do
     visit user_post_path(@user, @first_post)
-    expect(page).to have_content('1 Comments')
+    expect(page).to have_content('Comments: 1')
   end
   it 'can display the number of likes' do
     visit user_post_path(@user, @first_post)
