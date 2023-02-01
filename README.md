@@ -90,10 +90,14 @@ Clone this repository to your desired folder:
 ### Install
 
 Install this project with:
-
 ```sh
   cd my-blog
   bundle install
+```
+
+Install tailwindcss gem to work properly:
+```sh
+  rails tailwindscss:install
 ```
 
 ### Usage
@@ -108,6 +112,11 @@ To run the project, execute the following command:
 Or for short:
 ```sh
   rails s
+```
+
+- if you want to modify styles & let tailwind compile on save run:
+```sh
+  rails tailwindcss:watch
 ```
 - Run mailcatcher using ```mailcatcher``` command
 - Register a new user & open the mailcatcher port to confirm your email
