@@ -17,10 +17,7 @@
       <p class="alert"><%= alert %></p>
       <p class="self-end">
         <% if current_user %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-        <% else %>
-          <p><%= link_to "Sign up", new_user_registration_path %> if you don't have an account.</p>
-          <p>Or <%= link_to "Log in", new_user_session_path %> if you already have an account.</p>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
         <% end %>
       </p>
       <%= yield %>
