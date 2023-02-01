@@ -76,6 +76,7 @@ In order to run this project you need:
 - Basic knowledge of the command line.
 - Ruby on Rails installed, you can follow this [link](https://guides.rubyonrails.org/v5.0/getting_started.html).
 - Postgresql Database, you can follow this [link](https://www.postgresql.org/download/), choose your system & follow the provided instructions.
+- <a href="https://mailcatcher.me/">Mailcatcher</a> (to confirm email in registration)
 
 ### Setup
 
@@ -89,10 +90,14 @@ Clone this repository to your desired folder:
 ### Install
 
 Install this project with:
-
 ```sh
   cd my-blog
   bundle install
+```
+
+Install tailwindcss gem to work properly:
+```sh
+  rails tailwindscss:install
 ```
 
 ### Usage
@@ -100,7 +105,7 @@ Install this project with:
 To run the project, execute the following command:
 
 
-To run the project in your browser, run:
+- To run the project in your browser, run:
 ```sh
   rails server
 ```
@@ -108,6 +113,13 @@ Or for short:
 ```sh
   rails s
 ```
+
+- if you want to modify styles & let tailwind compile on save run:
+```sh
+  rails tailwindcss:watch
+```
+- Run mailcatcher using ```mailcatcher``` command
+- Register a new user & open the mailcatcher port to confirm your email
 
 ### Run tests
 
@@ -129,6 +141,11 @@ Or for short:
 - GitHub: [@Peter1907](https://github.com/Peter1907)
 - Twitter: [@Peter_Beshara_](https://twitter.com/Peter_Beshara_)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/peter-beshara-b33681241/)
+
+👤 **Mohamed El-Deeb**
+
+- GitHub: [@githubhandle](https://github.com/eng-mohamed-eldeeb)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/eng-mohamed-eldeeb/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
