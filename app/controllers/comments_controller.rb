@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
+
   def new
     @comment = Comment.new(author_id: params[:user_id], post_id: params[:post_id])
   end
@@ -15,6 +18,16 @@ class CommentsController < ApplicationController
         else
           render :new, status: :unprocessable_entity
         end
+      end
+    end
+  end
+
+  def destroy
+    @comment.destroy
+    respond_to do |format|
+      format.html do
+        flash[:notice] = 'Comment deleted successfully'
+        redirect_to user_post_path(current_user, params[:post_id])
       end
     end
   end

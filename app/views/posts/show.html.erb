@@ -12,6 +12,9 @@
     <div class="comments border border-black p-4">
       <% @post.comments.each do |comment| %>
         <p><%= comment.author.name %>: <%= comment.text %></p>
+        <% if can? :destroy, @comment %>
+        <%= button_to "Delete comment", user_post_comment_path(@post.author, @post, comment), method: :delete %>
+        <% end %>
       <% end %>
     </div>
   <% end %>
