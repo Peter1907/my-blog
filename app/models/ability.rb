@@ -12,10 +12,10 @@ class Ability
       can :manage, Post
       can :manage, Comment
     else
+      can [:create, :destroy], Post, author_id: user.id
+      can [:create, :destroy], Comment, author_id: user.id
       can :read, Post
       can :read, Comment
-      can :manage, Post, author_id: user.id
-      can :manage, Comment, author_id: user.id
     end
     
     # The first argument to `can` is the action you are giving the user
