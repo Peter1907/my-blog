@@ -12,12 +12,12 @@ class Ability
       can :manage, Post
       can :manage, Comment
     else
-      can [:create, :destroy], Post, author_id: user.id
-      can [:create, :destroy], Comment, author_id: user.id
+      can %i[create destroy], Post, author_id: user.id
+      can %i[create destroy], Comment, author_id: user.id
       can :read, Post
       can :read, Comment
     end
-    
+
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
