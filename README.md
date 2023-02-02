@@ -47,12 +47,6 @@
 - **Model validation**
 - **RSpec testing**
 
-> Future Features
-
-- **Views**
-- **Forms**
-- **Authentication & Authorization**
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
@@ -149,6 +143,14 @@ Or for short:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- Implementing API features
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
@@ -164,6 +166,19 @@ Feel free to check the [issues page](../../issues/).
 ## ⭐️ Show your support <a name="support"></a>
 
 If you like this project give it a star!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+> Give credit to everyone who inspired your codebase.
+
+I would like to thank...
+
+- Microverse for overseeing the project
+- My coding partner [@Mohammed](https://github.com/eng-mohamed-eldeeb) for his help
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
