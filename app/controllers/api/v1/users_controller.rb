@@ -2,8 +2,7 @@ module Api
   module V1
     class UsersController < ApiController
       before_action authenticate_user!
-      def index
-      end
+      def index; end
 
       private
 
