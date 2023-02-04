@@ -4,8 +4,8 @@ Rails.application.routes.draw do
       devise_for :users, controllers: { sessions: :sessions }
 
       resources :users, only: %i[index] do
-        resources :posts, only: %i[index show create destroy] do
-          resources :comments, only: %i[new create destroy]
+        resources :posts, only: %i[index] do
+          resources :comments, only: %i[index create]
         end
       end
     end
